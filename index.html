@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <!--icons link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- css link -->
+    <link rel="stylesheet" type="text/css" href="video_css.css">
+    <!--media query style link-->
+    <link rel="stylesheet" type="text/css" href="media_query.css">
+
+</head>
+
+<body>
+    <div id="bgchange">
+        <h1>JS video player</h1><br>
+        <h2 id="text">Kutty Story</h2>
+        <video id="myvideo" src="video1.mp4"></video><br>
+        <div id="btns">
+            <button id="play" onclick="played()"><i class="fa fa-play-circle" aria-hidden="true"></i> Play</button>
+            <button id="pause" onclick="paused()"><i class="fa fa-pause-circle" aria-hidden="true"></i> Pause</button>
+            <button id="stop" onclick="restart()"><i class="fa fa-retweet" aria-hidden="true"></i> Restart</button>
+            <button id="next" onclick=next()><i class="fa fa-step-forward" aria-hidden="true"></i> Next</button>
+        </div>
+        
+    </div>
+    <img class="speaker1" src="speaker-music.gif">
+    <img class="speaker2" src="speaker-music.gif">
+
+
+
+
+    <!--java script-->
+
+    <script>
+        var myvideo = document.getElementById("myvideo");
+        var play = document.getElementById("play");
+        var pause = document.getElementById("pause");
+        var stoped = document.getElementById("stop");
+
+        function played() {
+            myvideo.play();
+        }
+
+        function paused() {
+            myvideo.pause();
+        }
+
+        function restart() {
+            myvideo.play();
+            myvideo.currentTime = 0;
+        }
+
+        /*next video funtion*/
+        var n = 0;
+        function next() {
+            if (n == 0) {
+
+                document.getElementById("myvideo").src = "video2.mp4";
+                document.getElementById("text").innerHTML = "Thalapathy Video";
+                myvideo.play();
+                n++;
+            }
+            else if (n == 1) {
+
+                document.getElementById("myvideo").src = "video3.mp4";
+                document.getElementById("text").innerHTML = "Love failure Status";
+                myvideo.play();
+                n++;
+
+            }
+            else if (n == 2) {
+
+                document.getElementById("myvideo").src = "video4.mp4";
+                document.getElementById("text").innerHTML = "Dhanush love Status";
+                myvideo.play();
+                n++;
+
+            }
+            else if (n == 3) {
+
+                alert("This is Last Video");
+
+            }
+
+        }
+    </script>
+</body>
+
+</html>
